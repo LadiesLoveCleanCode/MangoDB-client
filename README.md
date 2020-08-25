@@ -59,9 +59,9 @@ DELETE | /item/:id
 ## Images
 
 #### Wireframe:
-[wireframe](https://imgur.com/a/YPR2Pwn)
+![wireframe](https://imgur.com/a/YPR2Pwn)
 
 ---
 
 #### ERD:
-[ERD](https://miro.com/app/board/o9J_kmqs5VA=/)
+![ERD](https://miro.com/app/board/o9J_kmqs5VA=/)

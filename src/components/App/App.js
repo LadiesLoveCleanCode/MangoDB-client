@@ -44,6 +44,7 @@ class App extends Component {
             message={msgAlert.message}
           />
         ))}
+        {/* <h3>{props.location.state ? props.location.state.message : null}</h3> */}
         <main className="container">
           <Route path='/sign-up' render={() => (
             <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />

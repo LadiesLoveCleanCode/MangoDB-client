@@ -59,9 +59,9 @@ DELETE | /item/:id
 ## Images
 
 #### Wireframe:
-![wireframe](https://imgur.com/a/YPR2Pwn)
+[MangoDB Wireframe](https://imgur.com/a/YPR2Pwn)
 
 ---
 
 #### ERD:
-![ERD](https://miro.com/app/board/o9J_kmqs5VA=/)
+[MangoDB ERD](https://miro.com/app/board/o9J_kmqs5VA=/)

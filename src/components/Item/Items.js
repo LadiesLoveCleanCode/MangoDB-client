@@ -36,25 +36,7 @@ class Items extends Component {
       .catch(console.error)
   }
 
-  // destroyItem = () => {
-  //   axios({
-  //     url: `${apiUrl}/items/${this.state.items._id}`,
-  //     method: 'DELETE'
-  //   })
-  //     .then(() => this.setState({ deleted: true }))
-  //     .catch(console.error)
-  // }
-
   render () {
-    // const { deleted } = this.setState
-    //
-    // if (deleted) {
-    //   return <Redirect to={{
-    //     pathname: '/',
-    //     state: { message: 'Deleted item successfully' }
-    //   }} />
-    // }
-
     const items = this.state.items.map(item => (
       <li key={item._id}>
         <Link to={`/items/${item._id}`}>

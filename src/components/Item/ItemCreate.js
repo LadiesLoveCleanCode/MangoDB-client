@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom'
 import ItemForm from './ItemForm'
 // import Layout from '../shared/Layout'
 import apiUrl from '../../apiConfig'
+import messages from '../AutoDismissAlert/messages'
 
 // Import axios so we can make HTTP requests
 import axios from 'axios'
@@ -46,9 +47,6 @@ class ItemCreate extends Component {
       // then copy the updated field onto that new object
       const editedItem = Object.assign({}, prevState.item, updatedField)
 
-      console.log('updatedField is', updatedField)
-      console.log('editedItem is', editedItem)
-
       // return the state change, of setting the `book` state to its new value of
       // `editedBook`
       return { item: editedItem }
@@ -58,7 +56,7 @@ class ItemCreate extends Component {
   handleSubmit = event => {
     // prevent the page from refreshing
     event.preventDefault()
-    console.log(this.props.user)
+    const { msgAlert } = this.props
     axios({
       url: `${apiUrl}/items`,
       method: 'POST',
@@ -71,7 +69,18 @@ class ItemCreate extends Component {
       // if we succesfully created the item, set the `createdId` state to the id
       // of the item we got back in the response's data
       .then(res => this.setState({ createdId: res.data.item._id }))
-      .catch(console.error)
+      .then(() => msgAlert({
+        heading: 'Create Item Success',
+        message: messages.createItemSuccess,
+        variant: 'success'
+      }))
+      .catch(error => {
+        msgAlert({
+          heading: 'Create Item Failure' + error.message,
+          message: messages.createItemFailure,
+          variant: 'danger'
+        })
+      })
   }
 
   render () {

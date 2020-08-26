@@ -24,8 +24,13 @@ class Items extends Component {
   // this is called whenever our component is created and inserted
   // into the DOM (first appears)
   componentDidMount () {
-    // make a GET request for all of the books
-    axios(`${apiUrl}/items`)
+    // make a GET request for all of the items
+    axios({
+      url: (`${apiUrl}/items`),
+      headers: {
+        'Authorization': `Bearer ${this.props.user.token}`
+      }
+    })
       .then(res => this.setState({ items: res.data.items }))
       .catch(console.error)
   }
@@ -34,7 +39,7 @@ class Items extends Component {
     const items = this.state.items.map(item => (
       <li key={item._id}>
         <Link to={`/items/${item._id}`}>
-          {item.title}
+          {item.product}
         </Link>
       </li>
     ))

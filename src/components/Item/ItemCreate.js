@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import ItemForm from './ItemForm'
 // import Layout from '../shared/Layout'
-
-// import the api's url
 import apiUrl from '../../apiConfig'
 
 // Import axios so we can make HTTP requests
@@ -60,10 +58,13 @@ class ItemCreate extends Component {
   handleSubmit = event => {
     // prevent the page from refreshing
     event.preventDefault()
-
+    console.log(this.props.user)
     axios({
       url: `${apiUrl}/items`,
       method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${this.props.user.token}`
+      },
       // send the new value for our item, which comes from `this.state`
       data: { item: this.state.item }
     })

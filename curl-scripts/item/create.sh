@@ -1,6 +1,6 @@
 #!/bin/bash
 
-API="https://localhost:4741"
+API="http://localhost:4741"
 URL_PATH="/items"
 
 curl "${API}${URL_PATH}" \

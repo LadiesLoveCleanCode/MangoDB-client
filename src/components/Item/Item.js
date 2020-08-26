@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link, Redirect } from 'react-router-dom'
 import apiUrl from '../../apiConfig'
+import messages from '../AutoDismissAlert/messages'
 
 // Import axios so we can make HTTP requests
 import axios from 'axios'
@@ -32,13 +33,28 @@ class Item extends Component {
   }
 
   destroyItem = () => {
+    const { msgAlert } = this.props
     axios({
       url: `${apiUrl}/items/${this.props.match.params.id}`,
-      method: 'DELETE'
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${this.props.user.token}`
+      }
     })
       // update the `deleted` state to be `true`
       .then(() => this.setState({ deleted: true }))
-      .catch(console.error)
+      .then(() => msgAlert({
+        heading: 'Deleted Item Successfully',
+        message: messages.deleteItemSuccess,
+        variant: 'success'
+      }))
+      .catch(error => {
+        msgAlert({
+          heading: 'Delete Item Failure' + error.message,
+          message: messages.deleteItemFailure,
+          variant: 'danger'
+        })
+      })
   }
 
   render () {
@@ -53,9 +69,9 @@ class Item extends Component {
       // redirect to the home page
       return <Redirect to={{
         // Redirect to the home page ('/')
-        pathname: '/',
+        pathname: '/items',
         // Pass along a message, in state, that we can show
-        state: { message: 'Deleted item successfully' }
+        state: { msgAlert: 'Deleted item successfully' }
       }} />
     }
 

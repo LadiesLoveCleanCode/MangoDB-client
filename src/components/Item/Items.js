@@ -9,15 +9,16 @@ import apiUrl from '../../apiConfig'
 // Import axios so we can make HTTP requests
 import axios from 'axios'
 
-// This will be our Books Index component (show all books)
+// This will be our Items Index component (show all books)
 class Items extends Component {
   constructor (props) {
     super(props)
 
     // setup our initial state
     this.state = {
-      // we have zero books, until our API request has finished
+      // we have zero items, until our API request has finished
       items: []
+      // deleted: false
     }
   }
 
@@ -35,11 +36,29 @@ class Items extends Component {
       .catch(console.error)
   }
 
+  // destroyItem = () => {
+  //   axios({
+  //     url: `${apiUrl}/items/${this.state.items._id}`,
+  //     method: 'DELETE'
+  //   })
+  //     .then(() => this.setState({ deleted: true }))
+  //     .catch(console.error)
+  // }
+
   render () {
+    // const { deleted } = this.setState
+    //
+    // if (deleted) {
+    //   return <Redirect to={{
+    //     pathname: '/',
+    //     state: { message: 'Deleted item successfully' }
+    //   }} />
+    // }
+
     const items = this.state.items.map(item => (
       <li key={item._id}>
         <Link to={`/items/${item._id}`}>
-          {item.product}
+          {item.category}
         </Link>
       </li>
     ))

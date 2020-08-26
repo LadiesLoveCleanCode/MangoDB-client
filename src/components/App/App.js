@@ -9,6 +9,7 @@ import SignIn from '../SignIn/SignIn'
 import SignOut from '../SignOut/SignOut'
 import ChangePassword from '../ChangePassword/ChangePassword'
 import Items from '../Item/Items'
+import Item from '../Item/Item'
 import ItemCreate from '../Item/ItemCreate'
 
 class App extends Component {
@@ -60,8 +61,12 @@ class App extends Component {
             <ChangePassword msgAlert={this.msgAlert} user={user} />
           )} />
 
-          <AuthenticatedRoute user={user} path='/items' render={() => (
+          <AuthenticatedRoute user={user} exact path='/items' render={() => (
             <Items msgAlert={this.msgAlert} user={user} />
+          )} />
+
+          <AuthenticatedRoute user={user} exact path='/items/:id' render={({ match }) => (
+            <Item msgAlert={this.msgAlert} user={user} match={match}/>
           )} />
 
           <AuthenticatedRoute user={user} path='/items-create' render={() => (

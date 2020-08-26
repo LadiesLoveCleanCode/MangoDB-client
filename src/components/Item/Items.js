@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 
 // import the api's url
 import apiUrl from '../../apiConfig'
+import messages from '../AutoDismissAlert/messages'
 
 // Import axios so we can make HTTP requests
 import axios from 'axios'
@@ -26,6 +27,7 @@ class Items extends Component {
   // into the DOM (first appears)
   componentDidMount () {
     // make a GET request for all of the items
+    const { msgAlert } = this.props
     axios({
       url: (`${apiUrl}/items`),
       headers: {
@@ -33,7 +35,18 @@ class Items extends Component {
       }
     })
       .then(res => this.setState({ items: res.data.items }))
-      .catch(console.error)
+      .then(() => msgAlert({
+        heading: 'Index Item Successfully',
+        message: messages.indexItemSuccess,
+        variant: 'success'
+      }))
+      .catch(error => {
+        msgAlert({
+          heading: 'Index Item Failed' + error.message,
+          message: messages.indexItemFailure,
+          variant: 'danger'
+        })
+      })
   }
 
   render () {
@@ -44,7 +57,13 @@ class Items extends Component {
         </Link>
       </li>
     ))
-
+    // if (items === true) {
+    //   return msgAlert({
+    //     heading: 'Updated Item Successfully',
+    //     message: messages.updateItemSuccess,
+    //     variant: 'success'
+    //   })
+    // }
     return (
       // <Layout>
       <div>

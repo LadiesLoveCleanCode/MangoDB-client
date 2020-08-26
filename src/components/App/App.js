@@ -11,6 +11,7 @@ import ChangePassword from '../ChangePassword/ChangePassword'
 import Items from '../Item/Items'
 import Item from '../Item/Item'
 import ItemCreate from '../Item/ItemCreate'
+import ItemUpdate from '../Item/ItemUpdate'
 
 class App extends Component {
   constructor () {
@@ -72,6 +73,9 @@ class App extends Component {
 
           <AuthenticatedRoute user={user} path='/items-create' render={() => (
             <ItemCreate msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/items/:id/update' render={({ match }) => (
+            <ItemUpdate msgAlert={this.msgAlert} user={user} match={match}/>
           )} />
         </main>
       </Fragment>

@@ -20,6 +20,7 @@ class Item extends Component {
   }
 
   componentDidMount () {
+    const { msgAlert } = this.props
     axios({
       url: `${apiUrl}/items/${this.props.match.params.id}`,
       method: 'GET',
@@ -29,6 +30,18 @@ class Item extends Component {
       data: { item: this.state.item }
     })
       .then(res => this.setState({ item: res.data.item }))
+      .then(() => msgAlert({
+        heading: 'Show Item Successfully',
+        message: messages.showItemSuccess,
+        variant: 'success'
+      }))
+      .catch(error => {
+        msgAlert({
+          heading: 'Show Item Failed' + error.message,
+          message: messages.showItemFailure,
+          variant: 'danger'
+        })
+      })
       .catch(console.error)
   }
 
@@ -81,6 +94,9 @@ class Item extends Component {
         <p>Product: {item.product}</p>
         <p>Price: ${item.price}</p>
         <button onClick={this.destroyItem}>Delete Item</button>
+        <Link to={`/items/${this.props.match.params.id}/update`}>
+          <button>Update</button>
+        </Link>
         <Link to='/items'>Back to all items 🍎</Link>
       </div>
     )

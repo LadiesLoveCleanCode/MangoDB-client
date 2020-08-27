@@ -7,6 +7,7 @@ const ItemForm = ({ item, handleSubmit, handleChange, cancelPath }) => (
     <Form.Group controlId="exampleForm.ControlSelect1">
       <Form.Label>Category</Form.Label>
       <Form.Control as="select" value={item.category} name='category' onChange={handleChange}>
+        <option>Choose a category...</option>
         <option>Fruits</option>
         <option>Vegetables</option>
         <option>Proteins</option>

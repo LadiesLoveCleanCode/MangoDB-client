@@ -1,16 +1,38 @@
 @import '~bootstrap/scss/bootstrap';
 @import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
 
+$background-color: #cfe741;
+$button-color: #339933;
+$hover-font-color: #aee8bb;
+$plantiful-font-color: #61ad6f;
+$text-color: #f81894;
+
+
 body {
-  background: cover;
+  background: no-repeat center center;
   background-color: #cfe741;
   background-position:top;
-  background-size:cover;
+//   background-size: cover;
   font-family: 'Sriracha', cursive;
   background-image: url('/smoothie_stand.png');
+  background-size: cover;
+  width: 100%;
 }
 
 navbar {
   background-color: #cfe741;
+  text-align: center;
+}
+
+a:link {
+  color: red;
+}
+
+h1 {
+  text-align: justify;
+  font-size: 90px;
+}
+
+ml-auto {
   text-align: center;
 }

@@ -17,6 +17,7 @@ class ItemUpdate extends Component {
       item: {
         category: '',
         product: '',
+        quantity: '',
         price: ''
       },
       updated: false

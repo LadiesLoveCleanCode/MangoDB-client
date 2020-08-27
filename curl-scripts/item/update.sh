@@ -8,6 +8,7 @@ curl "http://localhost:4741/items/${ID}" \
   "item": {
     "category": "'"${CATEGORY}"'",
     "product": "'"${PRODUCT}"'",
+    "quantity": "'"${QUANTITY}"'",
     "price": "'"${PRICE}"'"
   }
 }'

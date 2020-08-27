@@ -1,1 +1,16 @@
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+
+body {
+  background: cover;
+  background-color: #cfe741;
+  background-position:top;
+  background-size:cover;
+  font-family: 'Sriracha', cursive;
+  background-image: url('/smoothie_stand.png');
+}
+
+navbar {
+  background-color: #cfe741;
+  text-align: center;
+}

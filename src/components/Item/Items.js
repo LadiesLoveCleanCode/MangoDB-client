@@ -36,13 +36,13 @@ class Items extends Component {
     })
       .then(res => this.setState({ items: res.data.items }))
       .then(() => msgAlert({
-        heading: 'Index Item Successfully',
+        heading: 'Success!',
         message: messages.indexItemSuccess,
         variant: 'success'
       }))
       .catch(error => {
         msgAlert({
-          heading: 'Index Item Failed' + error.message,
+          heading: 'Indexing Items Failed' + error.message,
           message: messages.indexItemFailure,
           variant: 'danger'
         })

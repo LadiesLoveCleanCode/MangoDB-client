@@ -31,7 +31,7 @@ class Item extends Component {
     })
       .then(res => this.setState({ item: res.data.item }))
       .then(() => msgAlert({
-        heading: 'Show Item Successfully',
+        heading: 'Success!',
         message: messages.showItemSuccess,
         variant: 'success'
       }))

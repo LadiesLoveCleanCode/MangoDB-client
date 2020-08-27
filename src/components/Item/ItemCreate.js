@@ -18,6 +18,7 @@ class ItemCreate extends Component {
         // set the default title and author to empty strings
         category: '',
         product: '',
+        quantity: '',
         price: ''
       },
       // Initially, the item has not been created, when it has been created, we will

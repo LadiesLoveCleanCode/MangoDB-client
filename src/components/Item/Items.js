@@ -34,12 +34,55 @@ class Items extends Component {
         'Authorization': `Bearer ${this.props.user.token}`
       }
     })
-      .then(res => this.setState({ items: res.data.items }))
-      .then(() => msgAlert({
-        heading: 'Success!',
-        message: messages.indexItemSuccess,
-        variant: 'success'
-      }))
+      // .then(res => {
+      //   if (res.data.items === []) {
+      //     msgAlert({
+      //       heading: 'Your Inventory Is Empty!',
+      //       message: messages.inventoryEmpty,
+      //       variant: 'danger'
+      //     })
+      //   }
+      // }
+      // )
+      .then((res) => {
+        this.setState({ items: res.data.items })
+        console.log(res)
+        if (res.data.items.length === 0) {
+          msgAlert({
+            heading: 'Your Inventory Is Empty!',
+            message: messages.inventoryEmpty,
+            variant: 'danger'
+          })
+        } else if (res) {
+          msgAlert({
+            heading: 'Success!',
+            message: messages.indexItemSuccess,
+            variant: 'success'
+          })
+        }
+      })
+      // .then((items) => {
+      //   console.log(items)
+      //   if (items === []) {
+      //     msgAlert({
+      //       heading: 'Your Inventory Is Empty!',
+      //       message: messages.inventoryEmpty,
+      //       variant: 'danger'
+      //     })
+      //   } else if (items) {
+      //     msgAlert({
+      //       heading: 'Success!',
+      //       message: messages.indexItemSuccess,
+      //       variant: 'success'
+      //     })
+      //   }
+      // }
+      // )
+      // .then((items) => msgAlert({
+      //   heading: 'Success!',
+      //   message: messages.indexItemSuccess,
+      //   variant: 'success'
+      // }))
       .catch(error => {
         msgAlert({
           heading: 'Indexing Items Failed' + error.message,

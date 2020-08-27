@@ -78,3 +78,32 @@ class Items extends Component {
 }
 
 export default Items
+
+
+handleSubmit = event => {
+  event.preventDefault()
+  axios({
+    url: `${apiUrl}/items`,
+    method: 'GET',
+    headers: {
+      'Authorization': `Bearer ${this.props.user.token}`
+    },
+    data: { item: this.state.item }
+  })
+    .then(res => {
+      if (res.data.item === true) {
+        return axios({
+          url: `${apiUrl}/items/${this.props.match.params.id}/update`,
+          method: 'PATCH',
+          headers: {
+            'Authorization': `Bearer ${this.props.user.token}`
+          },
+          data: { item: this.state.item }
+        })
+          .then(res => this.setState({ updated: true }))
+          .catch(console.error)
+      } else {
+
+      }
+    })
+}

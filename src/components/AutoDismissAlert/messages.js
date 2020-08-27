@@ -15,5 +15,6 @@ export default {
   showItemSuccess: 'Here Is Your Item!',
   showItemFailure: 'Cannot View Your Item At This Time',
   updateItemSuccess: 'Updated Item Successfully!',
-  updateItemFailure: 'Updated Item Failed!'
+  updateItemFailure: 'Updated Item Failed!',
+  inventoryEmpty: 'You Can\'t 👀 What Isn\'t There! Add Some Items!'
 }

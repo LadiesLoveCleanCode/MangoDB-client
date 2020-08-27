@@ -4,7 +4,7 @@ import ItemForm from './ItemForm'
 
 // import the api's url
 import apiUrl from '../../apiConfig'
-import messages from '../AutoDismissAlert/messages'
+// import messages from '../AutoDismissAlert/messages'
 
 // Import axios so we can make HTTP requests
 import axios from 'axios'
@@ -41,7 +41,7 @@ class ItemUpdate extends Component {
   handleSubmit = event => {
     // prevent the page from refreshing
     event.preventDefault()
-    const { msgAlert } = this.props
+    // const { msgAlert } = this.props
     axios({
       url: `${apiUrl}/items/${this.props.match.params.id}/update`,
       method: 'PATCH',
@@ -52,18 +52,19 @@ class ItemUpdate extends Component {
     })
       // if we succesfully updated the book, set the `updated` state to `true` to cause a redirect
       .then(res => this.setState({ updated: true }))
-      .then(() => msgAlert({
-        heading: 'Updated Item Successfully',
-        message: messages.updateItemSuccess,
-        variant: 'success'
-      }))
-      .catch(error => {
-        msgAlert({
-          heading: 'Updated Item Failed' + error.message,
-          message: messages.updateItemFailure,
-          variant: 'danger'
-        })
-      })
+      // .then(() => msgAlert({
+      //   heading: 'Updated Item Successfully',
+      //   message: messages.updateItemSuccess,
+      //   variant: 'success'
+      // }))
+      .catch(console.error)
+      // .catch(error => {
+      //   msgAlert({
+      //     heading: 'Updated Item Failed' + error.message,
+      //     message: messages.updateItemFailure,
+      //     variant: 'danger'
+      //   })
+      // })
   }
 
   render () {

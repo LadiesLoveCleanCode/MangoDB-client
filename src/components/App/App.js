@@ -8,6 +8,10 @@ import SignUp from '../SignUp/SignUp'
 import SignIn from '../SignIn/SignIn'
 import SignOut from '../SignOut/SignOut'
 import ChangePassword from '../ChangePassword/ChangePassword'
+import Items from '../Item/Items'
+import Item from '../Item/Item'
+import ItemCreate from '../Item/ItemCreate'
+import ItemUpdate from '../Item/ItemUpdate'
 
 class App extends Component {
   constructor () {
@@ -41,18 +45,37 @@ class App extends Component {
             message={msgAlert.message}
           />
         ))}
+        {/* <h3>{props.location.state ? props.location.state.message : null}</h3> */}
         <main className="container">
           <Route path='/sign-up' render={() => (
             <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
           )} />
+
           <Route path='/sign-in' render={() => (
             <SignIn msgAlert={this.msgAlert} setUser={this.setUser} />
           )} />
+
           <AuthenticatedRoute user={user} path='/sign-out' render={() => (
             <SignOut msgAlert={this.msgAlert} clearUser={this.clearUser} user={user} />
           )} />
+
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword msgAlert={this.msgAlert} user={user} />
+          )} />
+
+          <AuthenticatedRoute user={user} exact path='/items' render={() => (
+            <Items msgAlert={this.msgAlert} user={user} />
+          )} />
+
+          <AuthenticatedRoute user={user} exact path='/items/:id' render={({ match }) => (
+            <Item msgAlert={this.msgAlert} user={user} match={match}/>
+          )} />
+
+          <AuthenticatedRoute user={user} path='/items-create' render={() => (
+            <ItemCreate msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/items/:id/update' render={({ match }) => (
+            <ItemUpdate msgAlert={this.msgAlert} user={user} match={match}/>
           )} />
         </main>
       </Fragment>

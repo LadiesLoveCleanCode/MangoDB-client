@@ -3,40 +3,73 @@
 
 $background-color: #cfe741;
 $button-color: #fda50f;
-$hover-font-color: #aee8bb;
+$hover-font-color: #fff200;
 $text-color: #f81894;
 
 body {
-  background: no-repeat center center;
-  background-color: #cfe741;
-  background-position:top;
-//   background-size: cover;
-  font-family: 'Sriracha', cursive;
+  //background: no-repeat center center; (try this if the above doesn't work)
+  background-repeat: no-repeat;
+  background-color: $background-color;
   background-image: url('/smoothie_stand.png');
+  background-position: top fixed;
+  //   background-size: cover;
   background-size: cover;
+  font-family: 'Sriracha', cursive;
+  font-size: 25px;
   width: 100%;
 }
 
+// "container" centers the sign in page
+.container {
+  margin: 10px auto;
+  position: center;
+  width: 700px;
+}
+
 navbar {
-  background-color: #cfe741;
+  background-color: $background-color;
+  color: #fff200;
   text-align: center;
 }
 
-a:link {
-  color: red;
-}
-
 h1 {
-  text-align: justify;
-  font-size: 90px;
+  color: #17ecec;
+  font-size: 100px;
+  left: 0;
+  position: absolute;
+  text-align: left;
+  text-shadow: -1px 0 black, 0 4px black, 2px 0 black, 0 -1px black;
+  top: 0;
+  vertical-align: top;
 }
 
-//not sure if this works
-ml-auto {
+h3 {
+  align-items: center;
+  margin-left: 610px;
+  margin-top: 465px;
+  position: sticky;
+  text-align: center;
+}
+
+//this is the styling for the second row of category icons
+//remove h4 when not using categories as a line <br> list
+//h4 {
+  //position: center;
+  //margin-top: 40px;
+  //text-align: center;
+  //align-items: center;
+//}
+
+h5 {
+  bottom: 0;
+  left: 0;
+  position: absolute;
   text-align: center;
 }
 
 .auth-btns {
+  background-color: $button-color;
+  color: $hover-font-color;
   margin: .5%;
   position: absolute;
   right: 0;
@@ -46,9 +79,9 @@ ml-auto {
 button {
   background-color: $button-color;
   border: 0;
-  border-radius: 8px;
+  border-radius: 70px;
   border-width: thin;
-  font-size: 16px;
+  font-size: 25px;
   text-align: center;
   // width: 50%;
 
@@ -58,19 +91,72 @@ button {
   }
 }
 
-.change-password,
-.sign-out {
-  border: 2px lighter;
-  box-sizing: border-box;
-  font-size: 14px;
-  line-height: 25px;
-  margin-bottom: 20px;
-  outline: none;
-  padding: 16px;
-  transition: .5s ease;
-  // width: 100%;
-
-  & .input-change-password {
-    font-size: 14px;
-  }
+.btn-change-password {
+  background-color: $button-color;
+  border-color: none;
+  width: 200px;
 }
+
+.sign-up {
+  background-color: $text-color;
+  color: $hover-font-color;
+  float: left;
+  height: 60px;
+  line-height: 40px;
+  text-align: center;
+  width: 100%;
+}
+
+.sign-in {
+  background-color: $text-color;
+  color: $hover-font-color;
+  float: left;
+  height: 60px;
+  line-height: 40px;
+  text-align: center;
+  width: 100%;
+}
+
+// .column displays the sign up/sign in forms side-by-side
+.column {
+  display: flex;
+  flex-flow: row nowrap;
+  float: left;
+  padding: 10px;
+  width: 50%;
+}
+
+// sign in forms
+//.row {
+  //float: center;
+  //padding: 10px;
+  //width: 70%;
+  //background-color: $button-color;
+  //color: $hover-font-color;
+  //height: 600px;
+  //line-height: 40px;
+  //text-align: center;
+//}
+
+.unauth-form {
+  border-radius: 20px;
+  clear: both;
+  cursor: pointer;
+  height: 400px;
+  padding: 40px;
+  width: 100%;
+  //width: 50%;
+  justify-content: center;
+  position: relative;
+  }
+
+  table {
+    border-collapse: collapse;
+  }
+
+  td, th {
+    font-size: 20px;
+    border: 0px solid $hover-font-color;
+    padding: 3rem;
+    text-align: center;
+  }

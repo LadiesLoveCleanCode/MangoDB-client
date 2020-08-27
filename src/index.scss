@@ -2,11 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
 
 $background-color: #cfe741;
-$button-color: #339933;
+$button-color: #fda50f;
 $hover-font-color: #aee8bb;
-$plantiful-font-color: #61ad6f;
 $text-color: #f81894;
-
 
 body {
   background: no-repeat center center;
@@ -33,6 +31,46 @@ h1 {
   font-size: 90px;
 }
 
+//not sure if this works
 ml-auto {
   text-align: center;
+}
+
+.auth-btns {
+  margin: .5%;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+button {
+  background-color: $button-color;
+  border: 0;
+  border-radius: 8px;
+  border-width: thin;
+  font-size: 16px;
+  text-align: center;
+  // width: 50%;
+
+  &:hover {
+    background-color: $button-color;
+    color: $hover-font-color;
+  }
+}
+
+.change-password,
+.sign-out {
+  border: 2px lighter;
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 25px;
+  margin-bottom: 20px;
+  outline: none;
+  padding: 16px;
+  transition: .5s ease;
+  // width: 100%;
+
+  & .input-change-password {
+    font-size: 14px;
+  }
 }

@@ -11,9 +11,9 @@ body {
   //background: no-repeat center center; (try this if the above doesn't work)
   background-repeat: no-repeat;
   background-color: $background-color;
-  background-image: url('/smoothie_stand.png');
+  //background-image: url('/smoothie_stand.png');
   background-position: top fixed;
-  background-size: cover;
+  background-size: 30%;
   //background-size: contain;
   font-family: 'Roboto Mono', monospace;
   font-size: 25px;
@@ -36,7 +36,7 @@ navbar {
 h1 {
   font-family: 'Sriracha', cursive;
   color: #17ecec;
-  font-size: 100px;
+  font-size: 120px;
   left: 0;
   position: absolute;
   text-align: left;

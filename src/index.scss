@@ -12,10 +12,10 @@ body {
   background-repeat: no-repeat;
   background-color: $background-color;
   background-image: url('/smoothie_stand.png');
-  background-position: bottom fixed;
-  background-size: 70%;
-  margin-top: -10px;
-  //background-size: contain;
+  // background-position: bottom fixed;
+  background-size: 120%;
+  background-size: contain;
+  margin-bottom: 1200px;
   font-family: 'Roboto Mono', monospace;
   font-size: 25px;
   //width: 100%;   ***don't think this is necessary due to the background-size: cover
@@ -44,6 +44,7 @@ h1 {
   text-shadow: -1px 0 black, 0 4px black, 2px 0 black, 0 -1px black;
   top: 0;
   vertical-align: top;
+  margin-top: 70px;
 }
 
 h3 {
@@ -233,6 +234,35 @@ row {
     float: right;
     align-items: right;
     margin-right: -700px;
-    margin-top: -600px;
+    margin-top: -100px;
     padding: 50px;
   }
+
+.items {
+  background-color: $text-color;
+  color: #000;
+  float: center;
+  border-radius: 30px;
+  // height: 360px;
+  line-height: 40px;
+  text-align: center;
+  border: 2px lighter;
+  box-sizing: border-box;
+  font-size: 25px;
+  margin-top: 100px;
+  margin-bottom: -75px;
+  margin-left: 100px;
+
+  outline: none;
+  padding: 20px;
+  transition: .5s ease;
+  width: 70%;
+}
+
+ul {
+  list-style-type: none;
+ }
+
+navbar-text mr-2 {
+  font-color: $button-color;
+}

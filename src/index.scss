@@ -12,8 +12,9 @@ body {
   background-repeat: no-repeat;
   background-color: $background-color;
   background-image: url('/smoothie_stand.png');
-  background-position: top fixed;
-  background-size: 30%;
+  background-position: bottom fixed;
+  background-size: 70%;
+  margin-top: -10px;
   //background-size: contain;
   font-family: 'Roboto Mono', monospace;
   font-size: 25px;
@@ -69,6 +70,18 @@ h5 {
   text-align: center;
 }
 
+//h6 holds the styling for the titles "Sign Up" and "Sign In"
+h6 {
+  font-family: 'Roboto Mono', monospace;
+  //font-family: 'Sriracha', cursive;
+  color: #17ecec;
+  font-size: 40px;
+  text-align: center;margin-top: 100px;
+  position: sticky;
+  align-items: center;
+  text-shadow: -1px 0 black, 0 2px black, 1px 0 black, 0 -1px black;
+}
+
 .auth-btns {
   background-color: $button-color;
   color: $hover-font-color;
@@ -79,7 +92,7 @@ h5 {
 }
 
 button {
-  color: white;
+  color: $hover-font-color;
   background-color: $button-color;
   border: 0;
   border-radius: 70px;
@@ -94,6 +107,7 @@ button {
   }
 }
 
+//this still needs to be adjusted
 .btn-change-password {
   background-color: $button-color;
   border-color: none;
@@ -121,13 +135,14 @@ button {
 }
 
 // .column displays the sign up/sign in forms side-by-side
-.column {
-  display: flex;
-  flex-flow: row nowrap;
-  float: left;
-  padding: 10px;
-  width: 50%;
-}
+//.column {
+  // display: flex;
+  //flex-flow: row nowrap;
+  //float: left;
+  //padding: 10px;
+  //width: 50%;
+//}
+
 // .input styles the form fields for sign up and sign in
 .input {
   border: 2px lighter;
@@ -142,55 +157,67 @@ button {
 }
 
 //.unauth form styles the 2 pink boxes around signup/sign in
-.unauth-form {
+//.unauth-form {
+  // border-radius: 60px;
+  // clear: both;
+  // cursor: pointer;
+  // height: 400px;
+  // padding: 40px;
+  // width: 100%;
+  //width: 50%;
+  // justify-content: center;
+  // position: relative;
+  // }
+
+// revisit table, td, and th for a possible v2 (initially used for emoji placement)
+// table {
+//  border-collapse: collapse;
+//  }
+
+// td, th {
+//  font-size: 20px;
+//  border: 0px solid $hover-font-color;
+//  padding: 3rem;
+//  text-align: center;
+//  }
+
+//this changes the ORIGINAL sign in sign out fields
+form {
+  background-color: $text-color;
+  color: #000;
+  float: center;
+  border-radius: 30px;
+  // height: 360px;
+  line-height: 40px;
+  text-align: center;
+  border: 2px lighter;
+  box-sizing: border-box;
+  font-size: 25px;
+  margin-bottom: -100px;
+  outline: none;
+  padding: 40px;
+  transition: .5s ease;
+  width: 80%;
+  }
+
+//row is the class name for the default sign in/sign out section
+row {
+  background-color: $text-color;
+  color: $hover-font-color;
   border-radius: 60px;
   clear: both;
   cursor: pointer;
   height: 400px;
-  padding: 40px;
-  width: 100%;
-  //width: 50%;
   justify-content: center;
+  padding: 40px;
   position: relative;
-  }
-
-  table {
-    border-collapse: collapse;
-  }
-
-  td, th {
-    font-size: 20px;
-    border: 0px solid $hover-font-color;
-    padding: 3rem;
-    text-align: center;
-  }
-
-//the class name is wrong -- this is supposed to be the styling for add inventory
-  form {
-    border: 2px lighter;
-    box-sizing: border-box;
-    font-size: 20px;
-    margin-bottom: 20px;
-    outline: none;
-    padding: 8px;
-    transition: .5s ease;
-    width: 50%;
-  }
-
-//row is the class name for the default sign in/sign out section
-  row {
-    justify-content: center;
-    position: relative;
-    border-radius: 60px;
-    clear: both;
-    cursor: pointer;
-    height: 400px;
-    padding: 40px;
-    width: 100%;
+  width: 100%;
     //width: 50%;
   }
 
   col-sm-10 col-md-8 mx-auto mt-5 {
+    background-color: $text-color;
+    color: $hover-font-color;
     border-radius: 60px;
     clear: both;
     cursor: pointer;
@@ -200,4 +227,12 @@ button {
     //width: 50%;
     justify-content: center;
     position: relative;
+  }
+
+.menupicture {
+    float: right;
+    align-items: right;
+    margin-right: -700px;
+    margin-top: -600px;
+    padding: 50px;
   }

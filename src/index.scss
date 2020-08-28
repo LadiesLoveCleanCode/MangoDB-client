@@ -1,1 +1,203 @@
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;300&display=swap');
+
+$background-color: #cfe741;
+$button-color: #52dbff;
+$hover-font-color: #fff200;
+$text-color: #ffdbe9;
+
+body {
+  //background: no-repeat center center; (try this if the above doesn't work)
+  background-repeat: no-repeat;
+  background-color: $background-color;
+  background-image: url('/smoothie_stand.png');
+  background-position: top fixed;
+  background-size: 30%;
+  //background-size: contain;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 25px;
+  //width: 100%;   ***don't think this is necessary due to the background-size: cover
+}
+
+// "container" centers the sign in page
+.container {
+  margin: 10px auto;
+  position: center;
+  width: 700px;
+}
+
+navbar {
+  background-color: $background-color;
+  color: #fff200;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Sriracha', cursive;
+  color: #17ecec;
+  font-size: 120px;
+  left: 0;
+  position: absolute;
+  text-align: left;
+  text-shadow: -1px 0 black, 0 4px black, 2px 0 black, 0 -1px black;
+  top: 0;
+  vertical-align: top;
+}
+
+h3 {
+  align-items: center;
+  margin-left: 200px;
+  margin-top: 205px;
+  position: sticky;
+  text-align: center;
+}
+
+//this is the styling for the second row of category icons
+//remove h4 when not using categories as a line <br> list
+h4 {
+  position: center;
+  margin-top: 40px;
+  text-align: center;
+  align-items: center;
+}
+
+h5 {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  text-align: center;
+}
+
+.auth-btns {
+  background-color: $button-color;
+  color: $hover-font-color;
+  margin: .5%;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+button {
+  color: white;
+  background-color: $button-color;
+  border: 0;
+  border-radius: 70px;
+  border-width: thin;
+  font-size: 25px;
+  text-align: center;
+  // width: 50%;
+
+  &:hover {
+    background-color: $button-color;
+    color: $hover-font-color;
+  }
+}
+
+.btn-change-password {
+  background-color: $button-color;
+  border-color: none;
+  width: 200px;
+}
+
+.sign-up {
+  background-color: $text-color;
+  color: $hover-font-color;
+  float: left;
+  height: 60px;
+  line-height: 40px;
+  text-align: center;
+  width: 100%;
+}
+
+.sign-in {
+  background-color: $text-color;
+  color: $hover-font-color;
+  float: left;
+  height: 60px;
+  line-height: 40px;
+  text-align: center;
+  width: 100%;
+}
+
+// .column displays the sign up/sign in forms side-by-side
+.column {
+  display: flex;
+  flex-flow: row nowrap;
+  float: left;
+  padding: 10px;
+  width: 50%;
+}
+// .input styles the form fields for sign up and sign in
+.input {
+  border: 2px lighter;
+  // border: 0px;
+  border-radius: 30px;
+  box-sizing: border-box;
+  font-size: 20px;
+  margin-bottom: 20px;
+  outline: none;
+  padding: 8px;
+  transition: .5s ease;
+}
+
+//.unauth form styles the 2 pink boxes around signup/sign in
+.unauth-form {
+  border-radius: 60px;
+  clear: both;
+  cursor: pointer;
+  height: 400px;
+  padding: 40px;
+  width: 100%;
+  //width: 50%;
+  justify-content: center;
+  position: relative;
+  }
+
+  table {
+    border-collapse: collapse;
+  }
+
+  td, th {
+    font-size: 20px;
+    border: 0px solid $hover-font-color;
+    padding: 3rem;
+    text-align: center;
+  }
+
+//the class name is wrong -- this is supposed to be the styling for add inventory
+  form {
+    border: 2px lighter;
+    box-sizing: border-box;
+    font-size: 20px;
+    margin-bottom: 20px;
+    outline: none;
+    padding: 8px;
+    transition: .5s ease;
+    width: 50%;
+  }
+
+//row is the class name for the default sign in/sign out section
+  row {
+    justify-content: center;
+    position: relative;
+    border-radius: 60px;
+    clear: both;
+    cursor: pointer;
+    height: 400px;
+    padding: 40px;
+    width: 100%;
+    //width: 50%;
+  }
+
+  col-sm-10 col-md-8 mx-auto mt-5 {
+    border-radius: 60px;
+    clear: both;
+    cursor: pointer;
+    height: 400px;
+    padding: 40px;
+    width: 100%;
+    //width: 50%;
+    justify-content: center;
+    position: relative;
+  }

@@ -11,12 +11,15 @@ MangoDB allows users (company owners) to keep track of their inventory. Owners c
 - [MangoDB API Repo](https://github.com/LadiesLoveCleanCode/MangoDB-api)
 - [Deployed API](www.link.com)
 - [Deployed Client](www.link.com)
+- [Requirements](https://docs.google.com/document/d/1Ij44LMFBSAIjLPmFbrsG6fHpdGJdOW7Wzk2TF2QFczc/edit?usp=sharing)
+
 
 ## Planning Story
 
 We began planning by selecting a project idea from a list of prompts. Once we had chosen an inventory management app, we decided to limit the context in which the app can be used for version 1. We decided on smoothies because WE LOVE HEALTHY FOOD!
 
 Our first step was to set up the back end API and make sure we were able to CRUD on authentication and resources. Next, we moved on to setting up the front end, following a similar CRUD process. Finally, we designed the front end using the React framework.
+
 
 ### User Stories
 
@@ -33,6 +36,7 @@ Our first step was to set up the back end API and make sure we were able to CRUD
 - If the product exists in the inventory, the app should make a PATCH request to update the existing item. If I don’t have enough product (when reducing product counts) the app should not allow the update.
 - If the product does not exists in the inventory, the app should make a POST request to create the new item.
 
+
 ### Technologies Used
 
 - HTML/CSS
@@ -41,27 +45,14 @@ Our first step was to set up the back end API and make sure we were able to CRUD
 - React
 - React Router
 
-### Catalog of Routes
-
-Verb         |	URI Pattern
------------- | -------------
-GET | /item
-GET | /item/:id
-POST | /item
-PATCH | /item/:id
-DELETE | /item/:id
 
 ### Unsolved Problems
 
 - Still need to ....
 - Would like to eventually ....
 
+
 ## Images
 
 #### Wireframe:
 [MangoDB Wireframe](https://imgur.com/a/YPR2Pwn)
-
----
-
-#### ERD:
-[MangoDB ERD](https://miro.com/app/board/o9J_kmqs5VA=/)

@@ -34,15 +34,56 @@ class Items extends Component {
         'Authorization': `Bearer ${this.props.user.token}`
       }
     })
-      .then(res => this.setState({ items: res.data.items }))
-      .then(() => msgAlert({
-        heading: 'Index Item Successfully',
-        message: messages.indexItemSuccess,
-        variant: 'success'
-      }))
+      // .then(res => {
+      //   if (res.data.items === []) {
+      //     msgAlert({
+      //       heading: 'Your Inventory Is Empty!',
+      //       message: messages.inventoryEmpty,
+      //       variant: 'danger'
+      //     })
+      //   }
+      // }
+      // )
+      .then((res) => {
+        this.setState({ items: res.data.items })
+        if (res.data.items.length === 0) {
+          msgAlert({
+            heading: 'Your Inventory Is Empty!',
+            message: messages.inventoryEmpty,
+            variant: 'danger'
+          })
+        } else if (res) {
+          msgAlert({
+            heading: 'Success!',
+            message: messages.indexItemSuccess,
+            variant: 'success'
+          })
+        }
+      })
+      // .then((items) => {
+      //   if (items === []) {
+      //     msgAlert({
+      //       heading: 'Your Inventory Is Empty!',
+      //       message: messages.inventoryEmpty,
+      //       variant: 'danger'
+      //     })
+      //   } else if (items) {
+      //     msgAlert({
+      //       heading: 'Success!',
+      //       message: messages.indexItemSuccess,
+      //       variant: 'success'
+      //     })
+      //   }
+      // }
+      // )
+      // .then((items) => msgAlert({
+      //   heading: 'Success!',
+      //   message: messages.indexItemSuccess,
+      //   variant: 'success'
+      // }))
       .catch(error => {
         msgAlert({
-          heading: 'Index Item Failed' + error.message,
+          heading: 'Indexing Items Failed' + error.message,
           message: messages.indexItemFailure,
           variant: 'danger'
         })
@@ -53,8 +94,9 @@ class Items extends Component {
     const items = this.state.items.map(item => (
       <li key={item._id}>
         <Link to={`/items/${item._id}`}>
-          {item.category}
-        </Link>
+          {item.product}
+        </Link><br/>
+        <p>Quantity: {item.quantity}</p>
       </li>
     ))
     // if (items === true) {

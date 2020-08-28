@@ -31,7 +31,7 @@ class Item extends Component {
     })
       .then(res => this.setState({ item: res.data.item }))
       .then(() => msgAlert({
-        heading: 'Show Item Successfully',
+        heading: 'Success!',
         message: messages.showItemSuccess,
         variant: 'success'
       }))
@@ -90,13 +90,14 @@ class Item extends Component {
 
     return (
       <div>
-        <h4>{item.category}</h4>
+        <h2>{item.category}</h2>
         <p>Product: {item.product}</p>
+        <p>Quantity: {item.quantity}</p>
         <p>Price: ${item.price}</p>
         <button onClick={this.destroyItem}>Delete Item</button>
-        <Link to={`/items/${this.props.match.params.id}/update`}>
+        {/* <Link to={`/items/${this.props.match.params.id}/update`}>
           <button>Update</button>
-        </Link>
+        </Link> */}
         <Link to='/items'>Back to all items 🍎</Link>
       </div>
     )

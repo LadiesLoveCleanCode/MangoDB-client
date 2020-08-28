@@ -8,12 +8,13 @@ export default {
   changePasswordFailure: 'Failed to change passwords. Check your old password and try again.',
   createItemSuccess: 'Created Item Successfully!',
   createItemFailure: 'Created Item Failed!',
-  indexItemSuccess: 'Here are your items!',
-  indexItemFailure: 'No items for you!',
+  indexItemSuccess: 'Here Are Your Items!',
+  indexItemFailure: 'No Items For You!',
   deleteItemSuccess: 'Deleted Item Successfully!',
   deleteItemFailure: 'Delete Item Failed!',
-  showItemSuccess: 'Here is your Product!',
-  showItemFailure: 'Cannot show item at this time',
+  showItemSuccess: 'Here Is Your Item!',
+  showItemFailure: 'Cannot View Your Item At This Time',
   updateItemSuccess: 'Updated Item Successfully!',
-  updateItemFailure: 'Updated Item Failed!'
+  updateItemFailure: 'Updated Item Failed!',
+  inventoryEmpty: 'You Can\'t 👀 What Isn\'t There! Add Some Items!'
 }

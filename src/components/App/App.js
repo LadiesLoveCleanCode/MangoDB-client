@@ -71,11 +71,11 @@ class App extends Component {
             <Item msgAlert={this.msgAlert} user={user} match={match}/>
           )} />
 
-          <AuthenticatedRoute user={user} path='/items-create' render={() => (
-            <ItemCreate msgAlert={this.msgAlert} user={user} />
+          <AuthenticatedRoute user={user} path='/items-create' render={({ match }) => (
+            <ItemCreate user={user} match={match} msgAlert={this.msgAlert}/>
           )} />
           <AuthenticatedRoute user={user} exact path='/items/:id/update' render={({ match }) => (
-            <ItemUpdate msgAlert={this.msgAlert} user={user} match={match}/>
+            <ItemUpdate user={user} match={match}/>
           )} />
         </main>
       </Fragment>

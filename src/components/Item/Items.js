@@ -46,7 +46,6 @@ class Items extends Component {
       // )
       .then((res) => {
         this.setState({ items: res.data.items })
-        console.log(res)
         if (res.data.items.length === 0) {
           msgAlert({
             heading: 'Your Inventory Is Empty!',
@@ -62,7 +61,6 @@ class Items extends Component {
         }
       })
       // .then((items) => {
-      //   console.log(items)
       //   if (items === []) {
       //     msgAlert({
       //       heading: 'Your Inventory Is Empty!',

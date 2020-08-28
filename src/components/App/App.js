@@ -72,7 +72,7 @@ class App extends Component {
           )} />
 
           <AuthenticatedRoute user={user} path='/items-create' render={({ match }) => (
-            <ItemCreate user={user} match={match}/>
+            <ItemCreate user={user} match={match} msgAlert={this.msgAlert}/>
           )} />
           <AuthenticatedRoute user={user} exact path='/items/:id/update' render={({ match }) => (
             <ItemUpdate user={user} match={match}/>

@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom'
 import ItemForm from './ItemForm'
 import apiUrl from '../../apiConfig'
 import axios from 'axios'
+import messages from '../AutoDismissAlert/messages'
 
 class ItemCreate extends Component {
   constructor (props) {
@@ -33,6 +34,7 @@ class ItemCreate extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
+    const { msgAlert } = this.props
     axios({
       url: `${apiUrl}/items`,
       method: 'GET',
@@ -73,8 +75,26 @@ class ItemCreate extends Component {
       .then((res) => {
         if (res.status === 201) {
           this.setState({ createdId: res.data.item._id })
-        } else {
+        } else if (res.status === 204) {
           this.setState({ updated: true })
+        }
+      })
+      .then((res) => {
+        if (res.status === 420) {
+          if (res.data.item.quantity < 0) {
+            return msgAlert({
+              heading: 'You can\'t have negative inventory 😱',
+              message: messages.updateItemFailure,
+              variant: 'danger'
+            })
+          // } else {
+          //   return msgAlert({
+          //     heading: '!',
+          //     message: messages.updateItemFailure,
+          //     variant: 'danger'
+          //   })
+          // }
+          }
         }
       })
       .catch(console.error)

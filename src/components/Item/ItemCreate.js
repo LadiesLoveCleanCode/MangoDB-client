@@ -79,25 +79,15 @@ class ItemCreate extends Component {
           this.setState({ updated: true })
         }
       })
-      .then((res) => {
-        if (res.status === 420) {
-          if (res.data.item.quantity < 0) {
-            return msgAlert({
-              heading: 'You can\'t have negative inventory 😱',
-              message: messages.updateItemFailure,
-              variant: 'danger'
-            })
-          // } else {
-          //   return msgAlert({
-          //     heading: '!',
-          //     message: messages.updateItemFailure,
-          //     variant: 'danger'
-          //   })
-          // }
-          }
+      .catch((error) => {
+        if (error.response.status === 420) {
+          return msgAlert({
+            heading: 'You can\'t have negative inventory 😱',
+            message: messages.updateItemFailure,
+            variant: 'danger'
+          })
         }
       })
-      .catch(console.error)
 
     // .then(res => this.setState({ createdId: res.data.item._id }))
     // .then(() => msgAlert({

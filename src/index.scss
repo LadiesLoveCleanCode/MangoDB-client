@@ -1,5 +1,6 @@
 @import '~bootstrap/scss/bootstrap';
 @import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;300&display=swap');
 
 $background-color: #cfe741;
 $button-color: #52dbff;
@@ -12,9 +13,9 @@ body {
   background-color: $background-color;
   background-image: url('/smoothie_stand.png');
   background-position: top fixed;
-  //   background-size: cover;
   background-size: cover;
-  font-family: 'Sriracha', cursive;
+  //background-size: contain;
+  font-family: 'Roboto Mono', monospace;
   font-size: 25px;
   //width: 100%;   ***don't think this is necessary due to the background-size: cover
 }
@@ -33,6 +34,7 @@ navbar {
 }
 
 h1 {
+  font-family: 'Sriracha', cursive;
   color: #17ecec;
   font-size: 100px;
   left: 0;
@@ -45,20 +47,20 @@ h1 {
 
 h3 {
   align-items: center;
-  margin-left: 610px;
-  margin-top: 465px;
+  margin-left: 200px;
+  margin-top: 205px;
   position: sticky;
   text-align: center;
 }
 
 //this is the styling for the second row of category icons
 //remove h4 when not using categories as a line <br> list
-//h4 {
-  //position: center;
-  //margin-top: 40px;
-  //text-align: center;
-  //align-items: center;
-//}
+h4 {
+  position: center;
+  margin-top: 40px;
+  text-align: center;
+  align-items: center;
+}
 
 h5 {
   bottom: 0;
@@ -108,16 +110,6 @@ button {
   width: 100%;
 }
 
-.input {
-  border: 2px lighter;
-  box-sizing: border-box;
-  font-size: 20px;
-  margin-bottom: 20px;
-  outline: none;
-  padding: 8px;
-  transition: .5s ease;
-}
-
 .sign-in {
   background-color: $text-color;
   color: $hover-font-color;
@@ -136,21 +128,22 @@ button {
   padding: 10px;
   width: 50%;
 }
+// .input styles the form fields for sign up and sign in
+.input {
+  border: 2px lighter;
+  // border: 0px;
+  border-radius: 30px;
+  box-sizing: border-box;
+  font-size: 20px;
+  margin-bottom: 20px;
+  outline: none;
+  padding: 8px;
+  transition: .5s ease;
+}
 
-// sign in forms
-//.row {
-  //float: center;
-  //padding: 10px;
-  //width: 70%;
-  //background-color: $button-color;
-  //color: $hover-font-color;
-  //height: 600px;
-  //line-height: 40px;
-  //text-align: center;
-//}
-
+//.unauth form styles the 2 pink boxes around signup/sign in
 .unauth-form {
-  border-radius: 20px;
+  border-radius: 60px;
   clear: both;
   cursor: pointer;
   height: 400px;
@@ -172,50 +165,39 @@ button {
     text-align: center;
   }
 
-  .menu {
-  padding:15px 17px;
-  font-size:20px;
-  border-radius:50%;
-  background:#ecf0f3;
-  cursor:pointer;
-}
+//the class name is wrong -- this is supposed to be the styling for add inventory
+  form {
+    border: 2px lighter;
+    box-sizing: border-box;
+    font-size: 20px;
+    margin-bottom: 20px;
+    outline: none;
+    padding: 8px;
+    transition: .5s ease;
+    width: 50%;
+  }
 
-.menu-menu {
-  display:flex;
-}
+//row is the class name for the default sign in/sign out section
+  row {
+    justify-content: center;
+    position: relative;
+    border-radius: 60px;
+    clear: both;
+    cursor: pointer;
+    height: 400px;
+    padding: 40px;
+    width: 100%;
+    //width: 50%;
+  }
 
-
-aside {
-  height: 100vh;
-  width: 300px;
-  position:absolute;
-  top:0;
-  padding:115px 30px 30px;
-  z-index: 1;
-  background:white;
-
-  transition: all 300ms ease;
-
-}
-
-aside.full-item-form {
-  left:0;
-  transform:translateX(-300px);
-  box-shadow:2px 0 15px 0 rgba(0,0,0,0.1);
-}
-
-
-aside.menu-aside {
-  right:0;
-  transform:translateX(300px);
-  box-shadow:-2px 0 15px 0 rgba(0,0,0,0.1);
-  position:fixed;
-}
-
-aside.full-item-form.open {
-  transform:translateX(0);
-}
-
-aside.menu-aside.open {
-  transform:translateX(0);
-}
+  col-sm-10 col-md-8 mx-auto mt-5 {
+    border-radius: 60px;
+    clear: both;
+    cursor: pointer;
+    height: 400px;
+    padding: 40px;
+    width: 100%;
+    //width: 50%;
+    justify-content: center;
+    position: relative;
+  }

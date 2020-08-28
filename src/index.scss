@@ -13,9 +13,9 @@ body {
   background-color: $background-color;
   background-image: url('/smoothie_stand.png');
   // background-position: bottom fixed;
-  background-size: 120%;
+  background-size: 100%;
   background-size: contain;
-  margin-bottom: 1200px;
+  margin-bottom: 600px;
   font-family: 'Roboto Mono', monospace;
   font-size: 25px;
   //width: 100%;   ***don't think this is necessary due to the background-size: cover
@@ -44,7 +44,7 @@ h1 {
   text-shadow: -1px 0 black, 0 4px black, 2px 0 black, 0 -1px black;
   top: 0;
   vertical-align: top;
-  margin-top: 70px;
+  margin-top: 100px;
 }
 
 h3 {
@@ -135,15 +135,6 @@ button {
   width: 100%;
 }
 
-// .column displays the sign up/sign in forms side-by-side
-//.column {
-  // display: flex;
-  //flex-flow: row nowrap;
-  //float: left;
-  //padding: 10px;
-  //width: 50%;
-//}
-
 // .input styles the form fields for sign up and sign in
 .input {
   border: 2px lighter;
@@ -157,31 +148,6 @@ button {
   transition: .5s ease;
 }
 
-//.unauth form styles the 2 pink boxes around signup/sign in
-//.unauth-form {
-  // border-radius: 60px;
-  // clear: both;
-  // cursor: pointer;
-  // height: 400px;
-  // padding: 40px;
-  // width: 100%;
-  //width: 50%;
-  // justify-content: center;
-  // position: relative;
-  // }
-
-// revisit table, td, and th for a possible v2 (initially used for emoji placement)
-// table {
-//  border-collapse: collapse;
-//  }
-
-// td, th {
-//  font-size: 20px;
-//  border: 0px solid $hover-font-color;
-//  padding: 3rem;
-//  text-align: center;
-//  }
-
 //this changes the ORIGINAL sign in sign out fields
 form {
   background-color: $text-color;
@@ -194,7 +160,7 @@ form {
   border: 2px lighter;
   box-sizing: border-box;
   font-size: 25px;
-  margin-bottom: -100px;
+  margin-top: 20px;
   outline: none;
   padding: 40px;
   transition: .5s ease;
@@ -230,13 +196,13 @@ row {
     position: relative;
   }
 
-.menupicture {
-    float: right;
-    align-items: right;
-    margin-right: -700px;
-    margin-top: -100px;
-    padding: 50px;
-  }
+//.menupicture {
+    // float: right;
+    // align-items: right;
+    // margin-right: -700px;
+    // margin-top: -100px;
+    // padding: 5px;
+  // }
 
 .items {
   background-color: $text-color;
@@ -249,7 +215,7 @@ row {
   border: 2px lighter;
   box-sizing: border-box;
   font-size: 25px;
-  margin-top: 100px;
+  margin-top: 200px;
   margin-bottom: -75px;
   margin-left: 100px;
 
@@ -263,6 +229,41 @@ ul {
   list-style-type: none;
  }
 
+// class name is wrong
 navbar-text mr-2 {
-  font-color: $button-color;
+  color: $button-color;
 }
+
+//.unauth form styles the 2 pink boxes around signup/sign in
+//.unauth-form {
+  // border-radius: 60px;
+  // clear: both;
+  // cursor: pointer;
+  // height: 400px;
+  // padding: 40px;
+  // width: 100%;
+  //width: 50%;
+  // justify-content: center;
+  // position: relative;
+  // }
+
+// revisit table, td, and th for a possible v2 (initially used for emoji placement)
+// table {
+//  border-collapse: collapse;
+//  }
+
+// td, th {
+//  font-size: 20px;
+//  border: 0px solid $hover-font-color;
+//  padding: 3rem;
+//  text-align: center;
+//  }
+
+// .column displays the sign up/sign in forms side-by-side
+//.column {
+  // display: flex;
+  //flex-flow: row nowrap;
+  //float: left;
+  //padding: 10px;
+  //width: 50%;
+//}

@@ -32,9 +32,6 @@ class ItemUpdate extends Component {
 
       const editedItem = Object.assign({}, prevState.item, updatedField)
 
-      console.log('updatedField is', updatedField)
-      console.log('editedItem is', editedItem)
-
       return { item: editedItem }
     })
   }

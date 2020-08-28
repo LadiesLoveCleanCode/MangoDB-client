@@ -1,6 +1,6 @@
 {
   "name": "MangoDB-client",
-  "homepage": "https://ladieslovecleancode.github.io/MangoDB-client/",
+  "homepage": "https://ladieslovecleancode.github.io/mangodb-client/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

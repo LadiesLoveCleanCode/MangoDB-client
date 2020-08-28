@@ -94,8 +94,9 @@ class Items extends Component {
     const items = this.state.items.map(item => (
       <li key={item._id}>
         <Link to={`/items/${item._id}`}>
-          {item.category}
-        </Link>
+          {item.product}
+        </Link><br/>
+        <p>Quantity: {item.quantity}</p>
       </li>
     ))
     // if (items === true) {

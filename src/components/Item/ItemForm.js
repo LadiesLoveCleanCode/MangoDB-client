@@ -5,6 +5,7 @@ import Form from 'react-bootstrap/Form'
 const ItemForm = ({ item, handleSubmit, handleChange, cancelPath }) => (
   <Form onSubmit={handleSubmit}>
     <Form.Group controlId="exampleForm.ControlSelect1">
+      <Form.Label>All Fields Required</Form.Label><br/>
       <Form.Label>Category</Form.Label>
       <Form.Control as="select" value={item.category} name='category' onChange={handleChange}>
         <option>Choose a category...</option>

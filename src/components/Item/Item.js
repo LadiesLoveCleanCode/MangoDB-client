@@ -15,7 +15,8 @@ class Item extends Component {
       // Initially, our item state will be null, until the API request finishes
       item: null,
       // initially this item has not been deleted yet
-      deleted: false
+      deleted: false,
+      redirect: false
     }
   }
 
@@ -45,6 +46,10 @@ class Item extends Component {
       .catch(console.error)
   }
 
+  handleClick = () => {
+    this.setState({ redirected: true })
+  }
+
   destroyItem = () => {
     const { msgAlert } = this.props
     axios({
@@ -71,7 +76,7 @@ class Item extends Component {
   }
 
   render () {
-    const { item, deleted } = this.state
+    const { item, deleted, redirected } = this.state
 
     if (!item) {
       return <p>Loading...</p>
@@ -88,12 +93,17 @@ class Item extends Component {
       }} />
     }
 
+    if (redirected) {
+      return <Redirect to={{ pathname: '/items-create' }} />
+    }
+
     return (
       <div>
-        <h2>{item.category}</h2>
+        <h3>{item.category}</h3>
         <p>Product: {item.product}</p>
         <p>Quantity: {item.quantity}</p>
         <p>Price: ${item.price}</p>
+        <button onClick={this.handleClick}>Update Item</button>
         <button onClick={this.destroyItem}>Delete Item</button>
         {/* <Link to={`/items/${this.props.match.params.id}/update`}>
           <button>Update</button>

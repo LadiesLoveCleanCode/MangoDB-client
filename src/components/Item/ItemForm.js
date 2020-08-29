@@ -9,12 +9,12 @@ const ItemForm = ({ item, handleSubmit, handleChange, cancelPath }) => (
       <Form.Label>Category</Form.Label>
       <Form.Control as="select" value={item.category} name='category' onChange={handleChange}>
         <option>Choose a category...</option>
-        <option>Fruits</option>
-        <option>Vegetables</option>
-        <option>Proteins</option>
-        <option>Bases</option>
-        <option>Add-Ins</option>
-        <option>Stock Items</option>
+        <option>Fruits 🍓</option>
+        <option>Vegetables 🥬</option>
+        <option>Proteins 🥜</option>
+        <option>Bases 🥛</option>
+        <option>Add-Ins 🍯</option>
+        <option>Stock Items 🥤</option>
       </Form.Control>
     </Form.Group>
     <Form.Group controlId="exampleForm.ControlSelect2">

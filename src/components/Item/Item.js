@@ -104,11 +104,12 @@ class Item extends Component {
         <p>Quantity: {item.quantity}</p>
         <p>Price: ${item.price}</p>
         <button onClick={this.handleClick}>Update Item</button>
-        <button onClick={this.destroyItem}>Delete Item</button>
+        <button onClick={this.destroyItem}>Delete Item</button><br/>
         {/* <Link to={`/items/${this.props.match.params.id}/update`}>
           <button>Update</button>
         </Link> */}
-        <Link to='/items'>Back to all items 🍎</Link>
+        <p></p><br/>
+        <Link to='/items'>Back to all items 📋</Link>
       </div>
     )
   }

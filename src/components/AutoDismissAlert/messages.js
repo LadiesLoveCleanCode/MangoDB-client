@@ -10,7 +10,7 @@ export default {
   createItemFailure: 'Created Item Failed!',
   indexItemSuccess: 'Here Are Your Items!',
   indexItemFailure: 'No Items For You!',
-  deleteItemSuccess: 'Deleted Item Successfully!',
+  deleteItemSuccess: 'Removed From Your Inventory!',
   deleteItemFailure: 'Delete Item Failed!',
   showItemSuccess: 'Here Is Your Item!',
   showItemFailure: 'Cannot View Your Item At This Time',

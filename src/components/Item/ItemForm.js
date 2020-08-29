@@ -13,7 +13,7 @@ const ItemForm = ({ item, handleSubmit, handleChange, cancelPath }) => (
         <option>Proteins</option>
         <option>Bases</option>
         <option>Add-Ins</option>
-        <option>Cups</option>
+        <option>Stock Items</option>
       </Form.Control>
     </Form.Group>
     <Form.Group controlId="exampleForm.ControlSelect2">

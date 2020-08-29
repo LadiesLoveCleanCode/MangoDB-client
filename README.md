@@ -48,9 +48,7 @@ Our first step was to set up the back end API and make sure we were able to CRUD
 
 ### Unsolved Problems
 
-- Add category routes to display inventory based on grouped categories
-- Add an update button that routes to manage your inventory page
-- Clickable icons to display inventory lists based on grouped categories
+In a future iteration of MangoDB we would love to use clickable category icons to display a user's inventory.  
 
 
 ## Images

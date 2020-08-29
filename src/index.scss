@@ -11,13 +11,13 @@ body {
   //background: no-repeat center center; (try this if the above doesn't work)
   background-repeat: no-repeat;
   background-color: $background-color;
-  background-image: url('/smoothie_stand.png');
+  background-image: url('smoothie_stand.png');
   // background-position: bottom fixed;
-  background-size: 100%;
   background-size: contain;
   margin-bottom: 600px;
   font-family: 'Roboto Mono', monospace;
   font-size: 25px;
+  overflow: hidden;
   //width: 100%;   ***don't think this is necessary due to the background-size: cover
 }
 
@@ -26,13 +26,30 @@ body {
   margin: 10px auto;
   position: center;
   width: 700px;
+  height: 200px;
 }
 
-navbar {
+.navbar {
   background-color: $background-color;
-  color: #fff200;
+  color: #000;
   text-align: center;
 }
+
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(0, 0, 0, 0.5);
+}
+.navbar-dark .navbar-nav .show > .nav-link, .navbar-dark .navbar-nav .active > .nav-link, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .nav-link.active {
+  color: #000;
+}
+.navbar-dark .navbar-text {
+  color: rgba(26, 23, 23, 0.5);
+}
+
+//.navlink {
+  //background-color: #000;
+  //color: #000;
+  //text-align: center;
+//}
 
 h1 {
   font-family: 'Sriracha', cursive;
@@ -77,10 +94,24 @@ h6 {
   //font-family: 'Sriracha', cursive;
   color: #17ecec;
   font-size: 40px;
-  text-align: center;margin-top: 100px;
-  position: sticky;
+  text-align: center;
+  position: relative;
   align-items: center;
   text-shadow: -1px 0 black, 0 2px black, 1px 0 black, 0 -1px black;
+  margin-top: 140px;
+}
+
+//h7 holds styling for "Items" titles
+h7 {
+  align-items: center;
+  color: #17ecec;
+  font-family: 'Roboto Mono', monospace;
+  //font-family: 'Sriracha', cursive;
+  font-size: 40px;
+  position: relative;
+  text-align: center;
+  text-shadow: -1px 0 black, 0 2px black, 1px 0 black, 0 -1px black;
+  //margin-top: 140px;
 }
 
 .auth-btns {
@@ -90,6 +121,7 @@ h6 {
   position: absolute;
   right: 0;
   top: 0;
+  padding: 10px;
 }
 
 button {
@@ -100,11 +132,12 @@ button {
   border-width: thin;
   font-size: 25px;
   text-align: center;
+  padding: 10px;
   // width: 50%;
 
   &:hover {
-    background-color: $button-color;
-    color: $hover-font-color;
+    background-color: $background-color;
+    color: $text-color;
   }
 }
 
@@ -160,9 +193,9 @@ form {
   border: 2px lighter;
   box-sizing: border-box;
   font-size: 25px;
-  margin-top: 20px;
+  margin-top: 15px;
   outline: none;
-  padding: 40px;
+  padding: 20px;
   transition: .5s ease;
   width: 80%;
   }
@@ -181,6 +214,21 @@ row {
   width: 100%;
     //width: 50%;
   }
+
+.btn-primary {
+  color: $hover-font-color;
+  background-color: $button-color;
+  border: 0;
+  border-radius: 70px;
+  border-width: thin;
+  font-size: 25px;
+  text-align: center;
+  // width: 50%;
+  &:hover {
+    background-color: $background-color;
+    color: #52dbff;
+  }
+}
 
   col-sm-10 col-md-8 mx-auto mt-5 {
     background-color: $text-color;
@@ -218,11 +266,25 @@ row {
   margin-top: 200px;
   margin-bottom: -75px;
   margin-left: 100px;
-
   outline: none;
   padding: 20px;
   transition: .5s ease;
   width: 70%;
+}
+
+.item {
+background-color: $text-color;
+color: #000;
+border-radius: 60px;
+clear: both;
+cursor: pointer;
+height: 300px;
+padding: 10px;
+width: 80%;
+margin: 0 auto;
+margin-top: 200px;
+justify-content: center;
+text-align: center;
 }
 
 ul {
@@ -234,6 +296,29 @@ navbar-text mr-2 {
   color: $button-color;
 }
 
+// .updates controls 'Manage Your Inventory' section
+.updates {
+  margin-top: 150px;
+  width: 80%;
+  padding: 25px;
+  color: #17ecec;
+  font-size: 40px;
+  text-align: center;
+  position: relative;
+  align-items: center;
+}
+
+// .change controls the styling for 'Change Password'
+.change {
+  color: $hover-font-color;
+  background-color: $button-color;
+  border: 0;
+  border-radius: 70px;
+  border-width: thin;
+  font-size: 20px;
+  padding: 10px;
+  text-align: center;
+}
 //.unauth form styles the 2 pink boxes around signup/sign in
 //.unauth-form {
   // border-radius: 60px;

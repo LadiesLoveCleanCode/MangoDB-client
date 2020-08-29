@@ -98,8 +98,8 @@ class Item extends Component {
     }
 
     return (
-      <div>
-        <h3>{item.category}</h3>
+      <div className="item">
+        <h7>{item.category}</h7>
         <p>Product: {item.product}</p>
         <p>Quantity: {item.quantity}</p>
         <p>Price: ${item.price}</p>

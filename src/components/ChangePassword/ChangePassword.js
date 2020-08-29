@@ -73,7 +73,7 @@ class ChangePassword extends Component {
                 onChange={this.handleChange}
               />
             </Form.Group>
-            <Button
+            <Button className="change"
               variant="primary"
               type="submit"
             >

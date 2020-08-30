@@ -114,6 +114,10 @@ h7 {
   //margin-top: 140px;
 }
 
+h8 {
+  font-size: 20px;
+}
+
 .auth-btns {
   background-color: $button-color;
   color: $hover-font-color;
@@ -319,6 +323,21 @@ navbar-text mr-2 {
   padding: 10px;
   text-align: center;
 }
+
+.alert-success {
+  color: $hover-font-color;
+  background-color: $button-color;
+  border-radius: 50px;
+  opacity: 0.8;
+}
+
+.alert-danger {
+  color: #000;
+  background-color: $hover-font-color;
+  border-radius: 50px;
+  opacity: 0.8;
+}
+
 //.unauth form styles the 2 pink boxes around signup/sign in
 //.unauth-form {
   // border-radius: 60px;

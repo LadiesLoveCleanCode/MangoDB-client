@@ -17,7 +17,7 @@ body {
   margin-bottom: 600px;
   font-family: 'Roboto Mono', monospace;
   font-size: 25px;
-  overflow: hidden;
+  //overflow: hidden;
   //width: 100%;   ***don't think this is necessary due to the background-size: cover
 }
 
@@ -329,6 +329,7 @@ navbar-text mr-2 {
   background-color: $button-color;
   border-radius: 50px;
   opacity: 0.8;
+  text-align: center;
 }
 
 .alert-danger {
@@ -336,6 +337,7 @@ navbar-text mr-2 {
   background-color: $hover-font-color;
   border-radius: 50px;
   opacity: 0.8;
+  text-align: center;
 }
 
 //.unauth form styles the 2 pink boxes around signup/sign in

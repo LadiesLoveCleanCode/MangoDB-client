@@ -26,11 +26,11 @@ body {
   margin: 10px auto;
   position: center;
   width: 700px;
-  height: 200px;
+  // height: 200px;
 }
 
 .navbar {
-  background-color: $background-color;
+  background-color: #52dbff;
   color: #000;
   text-align: center;
 }
@@ -98,7 +98,7 @@ h6 {
   position: relative;
   align-items: center;
   text-shadow: -1px 0 black, 0 2px black, 1px 0 black, 0 -1px black;
-  margin-top: 140px;
+  margin-top: 0;
 }
 
 //h7 holds styling for "Items" titles
@@ -197,7 +197,7 @@ form {
   border: 2px lighter;
   box-sizing: border-box;
   font-size: 25px;
-  margin-top: 15px;
+  margin-top: 150px;
   outline: none;
   padding: 20px;
   transition: .5s ease;
@@ -299,10 +299,13 @@ ul {
 navbar-text mr-2 {
   color: $button-color;
 }
+li {
+  width: 90%;
+}
 
 // .updates controls 'Manage Your Inventory' section
 .updates {
-  margin-top: 150px;
+  margin-top: 0;
   width: 80%;
   padding: 25px;
   color: #17ecec;

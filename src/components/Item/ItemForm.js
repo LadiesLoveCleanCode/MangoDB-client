@@ -8,6 +8,7 @@ const ItemForm = ({ item, handleSubmit, handleChange, cancelPath }) => (
     <Form onSubmit={handleSubmit}>
       <Form.Group controlId="exampleForm.ControlSelect1">
         <h7>Item</h7><br/>
+        <p> </p>
         <Form.Label>Category</Form.Label>
         <Form.Control as="select" value={item.category} name='category' onChange={handleChange}>
           <option>Choose a category...</option>

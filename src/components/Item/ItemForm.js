@@ -7,7 +7,7 @@ const ItemForm = ({ item, handleSubmit, handleChange, cancelPath }) => (
   <div className="updates">
     <Form onSubmit={handleSubmit}>
       <Form.Group controlId="exampleForm.ControlSelect1">
-        <Form.Label>All Fields Required</Form.Label><br/>
+        <h7>Item</h7><br/>
         <Form.Label>Category</Form.Label>
         <Form.Control as="select" value={item.category} name='category' onChange={handleChange}>
           <option>Choose a category...</option>
@@ -34,7 +34,8 @@ const ItemForm = ({ item, handleSubmit, handleChange, cancelPath }) => (
       <button type='submit'>Submit</button>
       <Link to={cancelPath}>
         <button>Cancel</button>
-      </Link>
+      </Link><br/>
+      <h8>*All Fields Required.</h8>
     </Form>
   </div>
 )

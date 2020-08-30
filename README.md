@@ -9,8 +9,8 @@ MangoDB allows users (company owners) to keep track of their inventory. Owners c
 ## Important Links
 
 - [MangoDB API Repo](https://github.com/LadiesLoveCleanCode/MangoDB-api)
-- [Deployed API](www.link.com)
-- [Deployed Client](www.link.com)
+- [Deployed API](https://ladieslovecleancode.github.io/MangoDB-api)
+- [Deployed Client](https://ladieslovecleancode.github.io/MangoDB-client)
 - [Requirements](https://docs.google.com/document/d/1Ij44LMFBSAIjLPmFbrsG6fHpdGJdOW7Wzk2TF2QFczc/edit?usp=sharing)
 
 
@@ -48,8 +48,7 @@ Our first step was to set up the back end API and make sure we were able to CRUD
 
 ### Unsolved Problems
 
-- Still need to ....
-- Would like to eventually ....
+In a future iteration of MangoDB we would love to use clickable category icons to display a user's inventory.  
 
 
 ## Images

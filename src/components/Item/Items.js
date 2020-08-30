@@ -108,8 +108,10 @@ class Items extends Component {
     // }
     return (
       // <Layout>
-      <div>
-        <h4>Items</h4>
+      <div className="items">
+        <h7>Items</h7><br/>
+        <p> </p>
+        <p> </p>
         <ul>
           {items}
         </ul>

@@ -11,12 +11,13 @@ body {
   //background: no-repeat center center; (try this if the above doesn't work)
   background-repeat: no-repeat;
   background-color: $background-color;
-  background-image: url('/smoothie_stand.png');
-  background-position: top fixed;
-  background-size: 30%;
-  //background-size: contain;
+  background-image: url('smoothie_stand.png');
+  // background-position: bottom fixed;
+  background-size: contain;
+  margin-bottom: 600px;
   font-family: 'Roboto Mono', monospace;
   font-size: 25px;
+  //overflow: hidden;
   //width: 100%;   ***don't think this is necessary due to the background-size: cover
 }
 
@@ -25,13 +26,30 @@ body {
   margin: 10px auto;
   position: center;
   width: 700px;
+  // height: 200px;
 }
 
-navbar {
-  background-color: $background-color;
-  color: #fff200;
+.navbar {
+  background-color: #52dbff;
+  color: #000;
   text-align: center;
 }
+
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(0, 0, 0, 0.5);
+}
+.navbar-dark .navbar-nav .show > .nav-link, .navbar-dark .navbar-nav .active > .nav-link, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .nav-link.active {
+  color: #000;
+}
+.navbar-dark .navbar-text {
+  color: rgba(26, 23, 23, 0.5);
+}
+
+//.navlink {
+  //background-color: #000;
+  //color: #000;
+  //text-align: center;
+//}
 
 h1 {
   font-family: 'Sriracha', cursive;
@@ -43,6 +61,7 @@ h1 {
   text-shadow: -1px 0 black, 0 4px black, 2px 0 black, 0 -1px black;
   top: 0;
   vertical-align: top;
+  margin-top: 100px;
 }
 
 h3 {
@@ -69,6 +88,36 @@ h5 {
   text-align: center;
 }
 
+//h6 holds the styling for the titles "Sign Up" and "Sign In"
+h6 {
+  font-family: 'Roboto Mono', monospace;
+  //font-family: 'Sriracha', cursive;
+  color: #17ecec;
+  font-size: 40px;
+  text-align: center;
+  position: relative;
+  align-items: center;
+  text-shadow: -1px 0 black, 0 2px black, 1px 0 black, 0 -1px black;
+  margin-top: 0;
+}
+
+//h7 holds styling for "Items" titles
+h7 {
+  align-items: center;
+  color: #17ecec;
+  font-family: 'Roboto Mono', monospace;
+  //font-family: 'Sriracha', cursive;
+  font-size: 40px;
+  position: relative;
+  text-align: center;
+  text-shadow: -1px 0 black, 0 2px black, 1px 0 black, 0 -1px black;
+  //margin-top: 140px;
+}
+
+h8 {
+  font-size: 20px;
+}
+
 .auth-btns {
   background-color: $button-color;
   color: $hover-font-color;
@@ -76,24 +125,27 @@ h5 {
   position: absolute;
   right: 0;
   top: 0;
+  padding: 10px;
 }
 
 button {
-  color: white;
+  color: $hover-font-color;
   background-color: $button-color;
   border: 0;
   border-radius: 70px;
   border-width: thin;
   font-size: 25px;
   text-align: center;
+  padding: 10px;
   // width: 50%;
 
   &:hover {
-    background-color: $button-color;
-    color: $hover-font-color;
+    background-color: $background-color;
+    color: $text-color;
   }
 }
 
+//this still needs to be adjusted
 .btn-change-password {
   background-color: $button-color;
   border-color: none;
@@ -120,14 +172,6 @@ button {
   width: 100%;
 }
 
-// .column displays the sign up/sign in forms side-by-side
-.column {
-  display: flex;
-  flex-flow: row nowrap;
-  float: left;
-  padding: 10px;
-  width: 50%;
-}
 // .input styles the form fields for sign up and sign in
 .input {
   border: 2px lighter;
@@ -141,56 +185,58 @@ button {
   transition: .5s ease;
 }
 
-//.unauth form styles the 2 pink boxes around signup/sign in
-.unauth-form {
+//this changes the ORIGINAL sign in sign out fields
+form {
+  background-color: $text-color;
+  color: #000;
+  float: center;
+  border-radius: 30px;
+  // height: 360px;
+  line-height: 40px;
+  text-align: center;
+  border: 2px lighter;
+  box-sizing: border-box;
+  font-size: 25px;
+  margin-top: 150px;
+  outline: none;
+  padding: 20px;
+  transition: .5s ease;
+  width: 80%;
+  }
+
+//row is the class name for the default sign in/sign out section
+row {
+  background-color: $text-color;
+  color: $hover-font-color;
   border-radius: 60px;
   clear: both;
   cursor: pointer;
   height: 400px;
-  padding: 40px;
-  width: 100%;
-  //width: 50%;
   justify-content: center;
+  padding: 40px;
   position: relative;
-  }
-
-  table {
-    border-collapse: collapse;
-  }
-
-  td, th {
-    font-size: 20px;
-    border: 0px solid $hover-font-color;
-    padding: 3rem;
-    text-align: center;
-  }
-
-//the class name is wrong -- this is supposed to be the styling for add inventory
-  form {
-    border: 2px lighter;
-    box-sizing: border-box;
-    font-size: 20px;
-    margin-bottom: 20px;
-    outline: none;
-    padding: 8px;
-    transition: .5s ease;
-    width: 50%;
-  }
-
-//row is the class name for the default sign in/sign out section
-  row {
-    justify-content: center;
-    position: relative;
-    border-radius: 60px;
-    clear: both;
-    cursor: pointer;
-    height: 400px;
-    padding: 40px;
-    width: 100%;
+  width: 100%;
     //width: 50%;
   }
+
+.btn-primary {
+  color: $hover-font-color;
+  background-color: $button-color;
+  border: 0;
+  border-radius: 70px;
+  border-width: thin;
+  font-size: 25px;
+  text-align: center;
+  // width: 50%;
+  &:hover {
+    background-color: $background-color;
+    color: #52dbff;
+  }
+}
 
   col-sm-10 col-md-8 mx-auto mt-5 {
+    background-color: $text-color;
+    color: $hover-font-color;
     border-radius: 60px;
     clear: both;
     cursor: pointer;
@@ -201,3 +247,132 @@ button {
     justify-content: center;
     position: relative;
   }
+
+//.menupicture {
+    // float: right;
+    // align-items: right;
+    // margin-right: -700px;
+    // margin-top: -100px;
+    // padding: 5px;
+  // }
+
+.items {
+  background-color: $text-color;
+  color: #000;
+  float: center;
+  border-radius: 30px;
+  // height: 360px;
+  line-height: 40px;
+  text-align: center;
+  border: 2px lighter;
+  box-sizing: border-box;
+  font-size: 25px;
+  margin-top: 200px;
+  margin-bottom: -75px;
+  margin-left: 100px;
+  outline: none;
+  padding: 20px;
+  transition: .5s ease;
+  width: 70%;
+}
+
+.item {
+background-color: $text-color;
+color: #000;
+border-radius: 60px;
+clear: both;
+cursor: pointer;
+height: 300px;
+padding: 10px;
+width: 80%;
+margin: 0 auto;
+margin-top: 200px;
+justify-content: center;
+text-align: center;
+}
+
+ul {
+  list-style-type: none;
+ }
+
+// class name is wrong
+navbar-text mr-2 {
+  color: $button-color;
+}
+li {
+  width: 90%;
+}
+
+// .updates controls 'Manage Your Inventory' section
+.updates {
+  margin-top: 0;
+  width: 80%;
+  padding: 25px;
+  color: #17ecec;
+  font-size: 40px;
+  text-align: center;
+  position: relative;
+  align-items: center;
+}
+
+// .change controls the styling for 'Change Password'
+.change {
+  color: $hover-font-color;
+  background-color: $button-color;
+  border: 0;
+  border-radius: 70px;
+  border-width: thin;
+  font-size: 20px;
+  padding: 10px;
+  text-align: center;
+}
+
+.alert-success {
+  color: $hover-font-color;
+  background-color: $button-color;
+  border-radius: 50px;
+  opacity: 0.8;
+  text-align: center;
+}
+
+.alert-danger {
+  color: #000;
+  background-color: $hover-font-color;
+  border-radius: 50px;
+  opacity: 0.8;
+  text-align: center;
+}
+
+//.unauth form styles the 2 pink boxes around signup/sign in
+//.unauth-form {
+  // border-radius: 60px;
+  // clear: both;
+  // cursor: pointer;
+  // height: 400px;
+  // padding: 40px;
+  // width: 100%;
+  //width: 50%;
+  // justify-content: center;
+  // position: relative;
+  // }
+
+// revisit table, td, and th for a possible v2 (initially used for emoji placement)
+// table {
+//  border-collapse: collapse;
+//  }
+
+// td, th {
+//  font-size: 20px;
+//  border: 0px solid $hover-font-color;
+//  padding: 3rem;
+//  text-align: center;
+//  }
+
+// .column displays the sign up/sign in forms side-by-side
+//.column {
+  // display: flex;
+  //flex-flow: row nowrap;
+  //float: left;
+  //padding: 10px;
+  //width: 50%;
+//}

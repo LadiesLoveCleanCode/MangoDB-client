@@ -82,7 +82,7 @@ class ItemCreate extends Component {
       .catch((error) => {
         if (error.response.status === 420) {
           return msgAlert({
-            heading: 'You can\'t have negative inventory 😱',
+            heading: 'You can\'t have negative values 😱',
             message: messages.updateItemFailure,
             variant: 'danger'
           })

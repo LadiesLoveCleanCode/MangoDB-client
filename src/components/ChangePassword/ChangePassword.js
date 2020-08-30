@@ -33,10 +33,10 @@ class ChangePassword extends Component {
         variant: 'success'
       }))
       .then(() => history.push('/'))
-      .catch(error => {
+      .catch(() => {
         this.setState({ oldPassword: '', newPassword: '' })
         msgAlert({
-          heading: 'Change Password Failed with error: ' + error.message,
+          heading: 'Password change unsuccessful',
           message: messages.changePasswordFailure,
           variant: 'danger'
         })
@@ -49,7 +49,7 @@ class ChangePassword extends Component {
     return (
       <div className="row">
         <div className="col-sm-10 col-md-8 mx-auto mt-5">
-          <h3>Change Password</h3>
+          <h3></h3>
           <Form onSubmit={this.onChangePassword}>
             <Form.Group controlId="oldPassword">
               <Form.Label>Old password</Form.Label>
@@ -73,7 +73,7 @@ class ChangePassword extends Component {
                 onChange={this.handleChange}
               />
             </Form.Group>
-            <Button
+            <Button className="change"
               variant="primary"
               type="submit"
             >

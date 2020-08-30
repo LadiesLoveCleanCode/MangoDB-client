@@ -34,10 +34,10 @@ class SignIn extends Component {
         variant: 'success'
       }))
       .then(() => history.push('/'))
-      .catch(error => {
+      .catch(() => {
         this.setState({ email: '', password: '' })
         msgAlert({
-          heading: 'Sign In Failed with error: ' + error.message,
+          heading: 'Sign In Failed',
           message: messages.signInFailure,
           variant: 'danger'
         })
@@ -50,16 +50,16 @@ class SignIn extends Component {
     return (
       <div className="row">
         <div className="col-sm-10 col-md-8 mx-auto mt-5">
-          <h3>Sign In</h3>
           <Form onSubmit={this.onSignIn}>
+            <h6>Sign In</h6><br/>
             <Form.Group controlId="email">
-              <Form.Label>Email address</Form.Label>
+              <Form.Label>Email Address</Form.Label>
               <Form.Control
                 required
                 type="email"
                 name="email"
                 value={email}
-                placeholder="Enter email"
+                placeholder="Enter Email"
                 onChange={this.handleChange}
               />
             </Form.Group>

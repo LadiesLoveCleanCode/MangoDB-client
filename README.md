@@ -48,10 +48,19 @@ Our first step was to set up the back end API and make sure we were able to CRUD
 
 ### Unsolved Problems
 
-In a future iteration of MangoDB we would love to use clickable category icons to display a user's inventory.
+In future iterations of MangoDB:
+
+- We will add clickable category icons to display a user's inventory based on the type of item (ex: fruits, vegetables, etc.).
+- We will add expiration dates to users' inventory items.
+- We would like the inventory list to have a scrolling feature.
+- We would like to add case sensitivity to items added to a user's inventory.
+- We would like to add functionality to allow a user to decrease an item's quantity without needing to use a - (ex: -2)
+- We would like to create a username feature that will display on the nav bar when the user logs in, instead of the user's email.
 
 
 ## Images
 
 #### Wireframe:
 [MangoDB Wireframe](https://imgur.com/a/YPR2Pwn)
+[Future Iteration Landing Page Wireframe](https://imgur.com/a/EKQMYLI)
+[Future Iteration Main Page Wireframe](https://imgur.com/a/T9Qi5hn)

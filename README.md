@@ -61,6 +61,6 @@ In future iterations of MangoDB:
 ## Images
 
 #### Wireframe:
-[MangoDB Wireframe](https://imgur.com/a/YPR2Pwn)
-[Future Iteration Landing Page Wireframe](https://imgur.com/a/EKQMYLI)
-[Future Iteration Main Page Wireframe](https://imgur.com/a/T9Qi5hn)
+- [MangoDB Wireframe](https://imgur.com/a/YPR2Pwn)
+- [Future Iteration Landing Page Wireframe](https://imgur.com/a/EKQMYLI)
+- [Future Iteration Main Page Wireframe](https://imgur.com/a/T9Qi5hn)
